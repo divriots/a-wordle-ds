@@ -8,13 +8,13 @@ const props = {
 };
 
 customElement('w-word', props, (props) => {
-  let [{ word, len }] = splitProps(props, ['word', 'len']);
+  const [local, { len }] = splitProps(props, ['word']);
 
-  if (typeof word === 'string') {
-    word = JSON.parse(word);
+  if (typeof local.word === 'string') {
+    local.word = JSON.parse(local.word);
   }
 
-  let letters = word.map((letter) =>
+  let letters = local.word.map((letter) =>
     typeof letter === 'string' ? { letter } : letter
   );
 

@@ -1,5 +1,4 @@
 import { customElement } from 'solid-element';
-import { splitProps, createSignal } from 'solid-js';
 import '~/keygroup';
 
 const props = {
@@ -7,18 +6,13 @@ const props = {
 };
 
 customElement('w-keyboard', props, (props, { element }) => {
-  let [{ groups }] = splitProps(props, ['groups']);
-
-  if (typeof groups === 'string') {
-    groups = JSON.parse(groups);
+  if (typeof props.groups === 'string') {
+    props.groups = JSON.parse(props.groups);
   }
-
-  const [_groups, setGroups] = createSignal(groups);
-  element.setGroups = setGroups;
 
   return (
     <section part="keyboard">
-      <For each={_groups()}>
+      <For each={props.groups}>
         {(group) => (
           <w-keygroup
             keys={group}

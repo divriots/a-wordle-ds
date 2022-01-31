@@ -1,5 +1,5 @@
 import { customElement } from 'solid-element';
-import { splitProps, createSignal } from 'solid-js';
+import { splitProps, createMemo } from 'solid-js';
 import '~/word';
 
 const props = {
@@ -9,16 +9,15 @@ const props = {
 };
 
 customElement('w-board', props, (props, { element }) => {
-  let [{ state, len, tries }] = splitProps(props, ['state', 'len', 'tries']);
+  const [local, { len, tries }] = splitProps(props, ['state']);
 
-  if (typeof state === 'string') {
-    state = JSON.parse(state);
+  if (typeof local.state === 'string') {
+    local.state = JSON.parse(local.state);
   }
 
-  state = [...state, ...Array(tries).fill([])].slice(0, tries);
-
-  const [_state, setState] = createSignal(state);
-  element.setState = setState;
+  const _state = createMemo(() =>
+    [...local.state, ...Array(tries).fill([])].slice(0, tries)
+  );
 
   return (
     <section
