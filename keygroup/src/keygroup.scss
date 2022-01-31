@@ -1,0 +1,21 @@
+:root {
+  --keygroup-gap: var(--space-gap);
+}
+
+@mixin keygroup {
+  width: 100%;
+  display: flex;
+  gap: var(--keygroup-gap);
+}
+
+w-keygroup::part(keygroup) {
+  @include keygroup;
+}
+
+w-keygroup::part(key) {
+  @include key;
+}
+
+w-keygroup::part(keycap) {
+  @include keycap;
+}

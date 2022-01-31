@@ -1,0 +1,31 @@
+html {
+  --light-color-absent: var(--color-gray-dark);
+  --light-color-present: var(--color-yellow);
+  --light-color-correct: var(--color-green);
+  --light-color-neutral: var(--color-gray-light);
+  --light-color-border: var(--color-gray-light);
+  --light-color-border-dark: var(--color-gray-dark);
+  --light-color-key: var(--color-gray-light);
+  --light-color-surface: var(--color-white);
+  --light-color-text: var(--color-black);
+  --light-color-text-invert: var(--color-white);
+}
+
+@mixin light {
+  color-scheme: light;
+
+  --w-color-absent: var(--light-color-absent);
+  --w-color-present: var(--light-color-present);
+  --w-color-correct: var(--light-color-correct);
+  --w-color-neutral: var(--light-color-neutral);
+  --w-color-border: var(--light-color-border);
+  --w-color-border-dark: var(--light-color-border-dark);
+  --w-color-key: var(--light-color-key);
+  --w-color-surface: var(--light-color-surface);
+  --w-color-text: var(--light-color-text);
+  --w-color-text-invert: var(--light-color-text-invert);
+}
+
+[color-scheme='light'] {
+  @include light;
+}

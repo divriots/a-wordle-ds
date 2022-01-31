@@ -1,0 +1,36 @@
+:root {
+  --w-card-border: var(--border-width) solid var(--w-color-border);
+  --w-card-fontsize: var(--font-size-xl);
+  --w-card-bold: var(--font-bold);
+}
+
+@mixin card {
+  box-sizing: border-box;
+  display: grid;
+  min-width: 3rem;
+  aspect-ratio: 1;
+}
+
+@mixin cardfront {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--w-card-border);
+  border-color: var(--card-color-border, var(--w-color-border));
+  background-color: var(--card-color-surface, var(--w-color-surface));
+  color: var(--card-color-text, var(--w-color-text));
+  text-transform: uppercase;
+  font-size: var(--w-card-fontsize);
+  font-weight: var(--w-card-bold);
+}
+
+w-card {
+  @include card;
+}
+
+w-card::part(front) {
+  @include cardfront;
+}

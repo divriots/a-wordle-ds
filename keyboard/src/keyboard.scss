@@ -1,0 +1,27 @@
+:root {
+  --w-keyboard-gap: var(--space-margin-lg);
+  --w-keyboard-margin: var(--space-margin-lg);
+}
+
+@mixin keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--w-keyboard-gap);
+  margin: 0 var(--w-keyboard-margin);
+}
+
+w-keyboard::part(keyboard) {
+  @include keyboard;
+}
+
+w-keyboard::part(keygroup) {
+  @include keygroup;
+}
+
+w-keyboard::part(key) {
+  @include key;
+}
+
+w-keyboard::part(keycap) {
+  @include keycap;
+}

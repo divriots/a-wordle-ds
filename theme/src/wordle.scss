@@ -1,0 +1,26 @@
+// Font-faces
+@import 'clear-sans-webfont/scss/clear-sans.scss';
+
+// Tokens
+@import '~/colors/src/_colors';
+@import '~/spaces/src/_spaces';
+@import '~/sizes/src/_sizes';
+@import '~/typography/src/_fonts';
+@import '~/borders/src/_borders';
+// @import '~/animations/src/_animations';
+
+// Components
+@import '~/key/src/key.scss';
+@import '~/keygroup/src/keygroup.scss';
+@import '~/keyboard/src/keyboard.scss';
+@import '~/card/src/card.scss';
+@import '~/word/src/word.scss';
+@import '~/board/src/board.scss';
+
+// Themes
+@import './light';
+
+// Default theme
+:root {
+  @include light;
+}

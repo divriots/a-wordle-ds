@@ -1,0 +1,36 @@
+{
+  "packages": {
+    "dir": "",
+    "menu": [
+      [
+        "TOKENS",
+        [
+          "typography",
+          "colors",
+          "spaces",
+          "sizes",
+          "borders",
+          "animations",
+          "theme"
+        ]
+      ],
+      [
+        "COMPONENTS",
+        [
+          "key",
+          "keygroup",
+          "keyboard",
+          "card",
+          "word",
+          "board"
+        ]
+      ],
+      [
+        "INFRASTRUCTURE",
+        [
+          "stories-layout"
+        ]
+      ]
+    ]
+  }
+}

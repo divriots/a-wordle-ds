@@ -1,0 +1,21 @@
+:root {
+  --w-word-gap: var(--space-gap);
+}
+
+@mixin word {
+  display: grid;
+  grid-template-columns: repeat(var(--word-length, 5), 1fr);
+  grid-gap: var(--w-word-gap);
+}
+
+w-word::part(word) {
+  @include word;
+}
+
+w-word::part(card) {
+  @include card;
+}
+
+w-word::part(cardfront) {
+  @include cardfront;
+}

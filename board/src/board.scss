@@ -1,0 +1,28 @@
+:root {
+  --w-board-gap: var(--space-gap);
+  --w-board-padding: var(--space-padding);
+}
+
+@mixin board {
+  display: grid;
+  grid-gap: var(--w-board-gap);
+  grid-template-rows: repeat(var(--board-tries, 6), 1fr);
+  box-sizing: border-box;
+  padding: var(--w-board-padding);
+}
+
+w-board::part(board) {
+  @include board;
+}
+
+w-board::part(word) {
+  @include word;
+}
+
+w-board::part(card) {
+  @include card;
+}
+
+w-board::part(cardfront) {
+  @include cardfront;
+}

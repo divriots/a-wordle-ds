@@ -1,0 +1,40 @@
+:root {
+  --w-key-width: var(--size-sm);
+  --w-key-height: var(--size-default);
+  --w-key-radius: var(--border-radius);
+  --w-key-fontsize: inherit;
+  --w-key-fontsize-mod: var(--font-size-sm);
+  --w-key-fontsize-icn: var(--font-size-lg);
+  --w-key-bold: var(--font-bold);
+  --w-key-flex: var(--space-flex);
+  --w-key-flex-mod: var(--space-flex-lg);
+}
+
+@mixin key {
+  flex: var(--key-flex, var(--w-key-flex));
+  cursor: pointer;
+  user-select: none;
+}
+
+@mixin keycap {
+  min-width: var(--w-key-width);
+  height: var(--w-key-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--w-key-radius);
+  background-color: var(--key-color-surface, var(--w-color-key));
+  color: var(--key-color-text, var(--w-color-text));
+  font-family: inherit;
+  font-size: var(--key-fontsize, var(--w-key-fontsize));
+  font-weight: var(--w-key-bold);
+  text-transform: uppercase;
+}
+
+w-key {
+  @include key;
+}
+
+w-key::part(keycap) {
+  @include keycap;
+}

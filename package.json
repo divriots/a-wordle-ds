@@ -1,0 +1,25 @@
+{
+  "name": "@backlight-dev/divriots.a-wordle-ds",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "{{ homepage }}",
+  "scripts": {
+    "serve": "npx backlight@latest serve 2UWT1NEdinqe2sru4rR7 --open"
+  },
+  "devDependencies": {
+    "babel-preset-solid": "*",
+    "lit-html": "*"
+  },
+  "dependencies": {
+    "solid-js": "*",
+    "solid-element": "*",
+    "clear-sans-webfont": "*"
+  },
+  "babel": {
+    "presets": [
+      "solid"
+    ]
+  }
+}
